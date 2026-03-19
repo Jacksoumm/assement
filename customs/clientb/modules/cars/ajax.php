@@ -7,7 +7,7 @@ $clientCars = array_filter($cars, fn($c) => $c['customer'] === 'clientb');
 <h1>Voitures Client B</h1>
 <ul>
 <?php foreach ($clientCars as $car): ?>
-    <li>
+    <li onclick="loadModule('cars','edit',{id:<?= $car['id'] ?>})" style="cursor:pointer">
         <strong><?= htmlspecialchars(strtolower($car['modelName'])) ?></strong>
         <?= htmlspecialchars($car['brand']) ?>
         <?= htmlspecialchars($garageMap[$car['garageId']] ?? 'N/A') ?>

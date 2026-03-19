@@ -4,6 +4,10 @@ $garages = json_decode(file_get_contents(ROOT . '/data/garages.json'), true);
 $garageMap = array_column($garages, 'title', 'id');
 $clientCars = array_filter($cars, fn($c) => $c['customer'] === 'clientb');
 ?>
+<nav>
+    <button onclick="loadModule('cars','ajax')">Voitures</button>
+    <button onclick="loadModule('garage','ajax')">Garage</button>
+</nav>
 <h1>Voitures Client B</h1>
 <ul>
 <?php foreach ($clientCars as $car): ?>

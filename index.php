@@ -14,7 +14,7 @@
     <button onclick="switchClient('clientc')">Client C</button>
 </nav>
 
-    <div class="dynamic-div" data-module="cars" data-script="list"></div>
+    <div class="dynamic-div" data-module="cars" data-script="ajax"></div>
     <script>
     function getCookie(name) {
         const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
@@ -35,7 +35,7 @@
 
     function switchClient(clientId) {
         setCookie('client', clientId);
-        loadModule('cars', 'list');
+        loadModule('cars', 'ajax');
     }
 
     $(document).ready(function() {
